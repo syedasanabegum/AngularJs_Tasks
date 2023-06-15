@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <title>Crud Operation</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+</head>
+
+<body>
+    
+    <table>
+        <tr>
+            <td>
+                <table class="list" id="storeList">
+                    <thead>
+                        <tr>
+                            <th>Employee ID</th>
+                            <th>Employee Name</th>
+                            <th>Employee Email</th>
+                            <th>Phone Number</th>
+                        </tr>
+                    </thead>
+                    <tbody id="myTable">
+                        <tr></tr>
+                    </tbody>
+                </table>
+            </td>
+            <td>
+                
+                <form autocomplete="off" onsubmit="onFormSubmit()">
+                    <div>
+                        <label for="product">Employee Name</label>
+                        <input type="text" name="product" id="product" placeholder="Enter Name">
+                    </div>
+                    <div>
+                        <label for="qty">Employee Email</label>
+                        <input type="email" name="qty" id="qty" placeholder="Enter Email">
+                    </div>
+                    <div>
+                        <label for="perPrice">Phone Number</label>
+                        <input type="tel" name="perPrice" id="perPrice"  pattern="[1-9]{1}[0-9]{9}" placeholder="Enter 10 digit phone number" >
+                    </div>
+
+                    <div class="form_action--button">
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    </div>
+                </form>
+            </td>
+            
+                
+            
+        </tr>
+    </table>
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+</html>

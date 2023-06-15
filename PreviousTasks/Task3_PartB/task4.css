@@ -1,0 +1,102 @@
+/*dansing script*/
+@font-face {
+  font-family:myFirstFont ;
+  src: url('handwritten.ttf');
+}
+.handwritten{
+  font-family: myFirstFont;
+}
+
+@font-face {
+  font-family:mySecondFont ;
+  src: url('./DancingScript-VariableFont_wght.ttf');
+}
+.dancing{
+  font-family: mySecondFont;
+}
+@font-face {
+  font-family:myThirdFont ;
+  src: url('./Montserrat-Regular.ttf');
+}
+.banner{
+  top:160px;
+}
+.text1{
+  font-size:50px;
+}
+.larger{
+  font-size:60px;
+}
+.montserrat{
+  font-family: myThirdFont;
+}
+
+.navbar{
+  color:black;
+  
+}
+.carol .col-lg-3 .col1, .col1{
+ background: linear-gradient(rgba(17, 26, 40, 0.541), #0a0a0acb),url("./Image1_03.png") center; 
+ background-size: cover;  
+}
+.carol .col-lg-3 .col3, .col3{
+  background: linear-gradient(rgba(17, 26, 40, 0.541), #0a0a0acb),url("./Image2_03.png") center; 
+  background-size: cover;  
+ }
+ .foot{
+  background: linear-gradient(rgba(17, 26, 40, 0.541), #0a0a0acb) center;
+ }
+ footer{
+  height:400px;
+ }
+ 
+ .footer-left{
+  position: absolute;
+  bottom:0;
+  left:0;
+ }
+ .footer-right{
+  position: absolute;
+  bottom:0;
+  right: 0;
+ }
+ @media (min-width: 300px) and (max-width: 600px) {
+  .dancing{
+    font-size:25px;
+  }
+  .larger{
+    font-size:28px;
+  }
+  .montserrat{
+    font-size: medium;
+  }
+  .text{
+    font-size:small;
+  }
+  .text1{
+    font-size:45px;
+     
+  }
+  .banner{
+    top:80px;
+  }
+  .banner-img{
+    height:100vh;
+  }
+  footer{
+    height:500px;
+  }
+  .footer-left{
+    position:absolute;
+    bottom:10%;
+    
+    text-align: center;
+  }
+   .footer-right{
+    position:absolute;
+    left:25%;
+   }
+  
+ }
+ 
+

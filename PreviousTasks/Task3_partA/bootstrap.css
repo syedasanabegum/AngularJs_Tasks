@@ -1,0 +1,39 @@
+
+body{
+    font-size: 20px;
+    
+}
+.navbar{
+    background-color: #4c6fab;
+}
+.nav-link{
+    color:white;
+    margin-right: 20px;
+}
+.nav-link:hover{
+    color:#00a6eb;
+}
+.header{
+    background-color: #4c6fab;
+    height:fit-content;
+}
+.services,.team,.container-fluid{
+    background-color: #f3f5fa;
+}
+.name{
+    margin-top:20px;
+    
+}
+
+.team .container .avatar{
+    width:180px;
+}
+.accordian-item{
+    font-size: 30px;
+}
+.accordion-button:hover{
+    color:#ca0a21;
+}
+.cta{
+    background: linear-gradient(rgba(26, 59, 117, 0.9), rgba(43, 85, 156, 0.9)), url("./cta-bg.jpg") fixed center;
+}
