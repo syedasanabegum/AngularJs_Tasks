@@ -1,0 +1,19 @@
+.well{
+    background-color:lightblue;
+    height:70px;
+}
+label, input{
+    margin: 5px;
+    border-radius: 5px;
+    height:30px;
+}
+input{
+    width:250px;
+}
+table{
+    
+    border:solid 1px blue;
+  }
+  table th, td{
+    border:solid 1px blue;
+  }
