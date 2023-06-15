@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <!-- Include necessary libraries -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/4.10.0/ui-grid.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/4.10.0/ui-grid.min.js"></script>
+</head>
+<body ng-controller="myController">
+  <!-- Form -->
+  <form ng-submit="submitForm()">
+    <input type="text" ng-model="formData.name" placeholder="Name" required>
+    <input type="email" ng-model="formData.email" placeholder="Email" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- UI Grid -->
+  <div id="gridContainer" ui-grid="gridOptions" ui-grid-pagination class="grid"></div>
+
+  <script>
+    angular.module('myApp', ['ui.grid','ui.grid.pagination'])
+      .controller('myController', ['$scope', 'EmployeeService', function ($scope, EmployeeService) {
+        $scope.gridOptions = {
+          enableSorting: true,
+          enableFiltering: true,
+          enablePaginationControls:true,
+          paginationPageSizes: [5, 10, 20],
+          paginationPageSize: 5,
+          columnDefs: [
+            { field: 'id', displayName: 'ID' },
+            { field: 'name', displayName: 'Name' },
+            { field: 'email', displayName: 'Email' },
+            {
+              name: 'Action',
+              displayName: 'Action',
+              cellTemplate:
+                '<button class="btn btn-primary btn-xs" ng-click="grid.appScope.editEmployee(row.entity)">Edit</button> ' +
+                '<button class="btn btn-danger btn-xs" ng-click="grid.appScope.deleteEmployee(row.entity)">Delete</button>',
+              enableSorting: false,
+              enableFiltering: false,
+            }
+          ]
+        };
+
+        // Load data initially
+        loadGridData();
+
+        function loadGridData() {
+          $scope.gridOptions.data = EmployeeService.getEmployees();
+        }
+
+        // Function to submit the form
+        $scope.submitForm = function () {
+          if ($scope.formData) {
+            if ($scope.formData.id) {
+              // Update existing employee
+              EmployeeService.updateEmployee($scope.formData);
+            } else {
+              // Add new employee
+              EmployeeService.addEmployee($scope.formData);
+            }
+            $scope.formData = {};
+            loadGridData();
+          }
+        };
+
+        // Function to edit an employee
+        $scope.editEmployee = function (employee) {
+          $scope.formData = angular.copy(employee);
+        };
+
+        // Function to delete an employee
+        $scope.deleteEmployee = function (employee) {
+          EmployeeService.deleteEmployee(employee.id);
+          loadGridData();
+        };
+      }])
+      .service('EmployeeService', function () {
+        var employees = [
+          { id: 1, name: 'John Doe', email: 'john@example.com' },
+          { id: 2, name: 'Jane Smith', email: 'jane@example.com' },
+          { id: 3, name: 'Bob Johnson', email: 'bob@example.com' },
+          { id: 4, name: 'Bob Johnson', email: 'bob@example.com' },
+          { id: 5, name: 'Bob Johnson', email: 'bob@example.com' },
+          { id: 6, name: 'Bob Johnson', email: 'bob@example.com' },
+          { id: 7, name: 'Bob Johnson', email: 'bob@example.com' },
+          { id: 8, name: 'Bob Johnson', email: 'bob@example.com' },
+          { id: 9, name: 'Bob Johnson', email: 'bob@example.com' },
+          { id: 10, name: 'Bob Johnson', email: 'bob@example.com' }
+
+        ];
+
+        this.getEmployees = function () {
+          return employees;
+        };
+
+        this.addEmployee = function (employee) {
+          employee.id = employees.length + 1;
+          employees.push(employee);
+        };
+
+        this.updateEmployee = function (employee) {
+          var index = employees.findIndex(function (emp) {
+            return emp.id === employee.id;
+          });
+          if (index !== -1) {
+            employees[index] = employee;
+          }
+        };
+
+        this.deleteEmployee = function (id) {
+          var index = employees.findIndex(function (emp) {
+            return emp.id === id;
+          });
+          if (index !== -1) {
+            employees.splice(index, 1);
+          }
+        };
+      });
+  </script>
+</body>
+</html>
