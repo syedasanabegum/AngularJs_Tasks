@@ -1,0 +1,26 @@
+/* Change the background color of the grid */
+.grid {
+    background-color: #f5f5f5;
+  }
+  
+  /* Change the font color of the grid header */
+  .ui-grid-header-cell {
+    color: #333;
+  }
+  
+  /* Change the background color of the grid rows on hover */
+  .ui-grid-row:hover {
+    background-color: #ddd;
+  }
+  .ui-grid-row{
+    height:50px;
+    
+  }
+  
+  /* Change the font color of the grid cell content */
+  .ui-grid-cell {
+    color: #555;
+    
+  }
+  
+  

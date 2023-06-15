@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<navigation-bar></navigation-bar>
+<div ng-controller="EmployeeController"></div>
+<div class="container">
+    <h2>Modal Login Example</h2>
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>
+  
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header" style="padding:5px 50px;">
+            <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+            <form class="  py-5" name="myForm" >
+                <div class="rounded" style="background-color: #da3e56;">
+                <h3 class="text-center" style="color:white">Form</h3>
+                <div class="row m-2">
+                    <div class="col"><label style="color:white">FirstName:</label></div>
+                    <div class="col">
+                        <input class="mb-1" type="text" ng-model="newcontact.firstName" name="firstName" ng-pattern="/^.{3,}$/"><br>
+                        <span ng-show="myForm.firstName.$error.pattern && myForm.firstName.$touched"
+                        style="background-color: white;" class="mt-3 p-1 rounded">
+                        <i class="fa fa-exclamation-circle" style="color:goldenrod" class="me-1" aria-hidden="true"></i>Invalid Name.</span>
+                  </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col"><label style="color:white">lastName:</label></div>
+                    <div class="col">
+                        <input class="mb-1" type="text" ng-model="newcontact.lastName" name="lastName" ng-pattern="/^.{3,}$/"><br>
+                        <span ng-show="myForm.lastName.$error.pattern && myForm.lastName.$touched"
+                        style="background-color: white;" class="mt-3 p-1 rounded">
+                        <i class="fa fa-exclamation-circle" style="color:goldenrod" class="me-1" aria-hidden="true"></i>Invalid Name.</span>
+                  </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col"><label style="color:white">Email:</label></div>
+                    <div class="col">
+                        <input type="email" id="email" ng-model="newcontact.email">
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col"><label style="color:white">Contact Number:</label></div>
+                    <div class="col">
+                        <input type="tel" class="mb-2" ng-model="newcontact.contactNumber" name="phone" ng-pattern="/^\d{10}$/"><br>
+                        <span ng-show="myForm.phone.$error.pattern && myForm.phone.$touched"
+                        style="background-color: white;" class="mt-3 p-1 rounded">
+                        <i class="fa fa-exclamation-circle" style="color:goldenrod" class="me-1" aria-hidden="true"></i>Provide valid Number.</span>
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col"><label style="color:white">Age:</label></div>
+                    <div class="col">
+                        <input type="number" ng-model="newcontact.age" name="age"ng-pattern="/^(0?[1-9]|[1-9][0-9])$/" class="mb-1">
+                        <span class=" p-1 rounded" ng-show="myForm.age.$error.pattern && myForm.age.$touched"
+                        style="background-color: white;" class="mt-3 p-1 rounded">
+                        <i class="fa fa-exclamation-circle" style="color:goldenrod" class="me-1" aria-hidden="true"></i>Provide valid Age.</span>
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col"><label style="color:white">DOB:</label></div>
+                    <div class="col">
+                        <input type="text" class="mb-1" ng-model="newcontact.dob" name="dob" ng-pattern="/^(0[1-9]|1[0-9]|2[0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/"><br>
+                        <span class=" p-1 rounded" ng-show="myForm.dob.$error.pattern && myForm.dob.$touched"
+                        style="background-color: white;" class="mt-3 p-1 rounded">
+                        <i class="fa fa-exclamation-circle" style="color:goldenrod" class="me-1" aria-hidden="true"></i>DD/MM/YYYY format</span>
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col"><label style="color:white">Salary:</label></div>
+                    <div class="col">
+                        <input type="text" class="mb-1" ng-model="newcontact.salary" name="salary" ng-pattern="/^\d+(\.\d{1,2})?$/"><br>
+                        <span class=" p-1 rounded" ng-show="myForm.salary.$error.pattern && myForm.salary.$touched"
+                        style="background-color: white;" class="mt-3 p-1 rounded">
+                        <i class="fa fa-exclamation-circle" style="color:goldenrod" class="me-1" aria-hidden="true"></i>invalid Input</span>
+                    </div>
+                </div>
+                <div class="row m-2">
+                    <div class="col"><label style="color:white">Address:</label></div>
+                    <div class="col"><input type="text" ng-model="newcontact.address"></div>
+                </div>
+                </div>
+              </form>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"> Submit</button>
+            </div>
+        </div>
+        
+      </div>
+    </div> 
+  </div>
+  <script>
+    $(document).ready(function(){
+      $("#myBtn").click(function(){
+        $("#myModal").modal();
+      });
+    });
+    </script>
+</body>
+</html>

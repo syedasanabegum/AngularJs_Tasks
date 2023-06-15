@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+<div class="d-flex justify-content-center align-items-center p-2 m-5">
+  <form ng-submit="signup()"class="rounded p-5" style="background-color: #da3e56;">
+    <h2 class="text-center mb-4" style="color:white">Login</h2>
+    <label style="color:white">Username :</label>
+    <input type="text" ng-model="signupUsername" placeholder="Username" class="m-2 p-2 rounded" required style="border:none;"><br>
+    <label style="color:white">Password :</label>
+    <input type="password" ng-model="signupPassword" placeholder="Password" class="m-2 p-2 rounded" required style="border:none;"><br>
+    <div class="d-flex justify-content-center align-items-center mt-4">              
+
+      <button type="submit" class="btn btn-light mx-5" style="color:#da3e56"><strong>Login</strong></button>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
