@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+    }
+
+    button {
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: darkblue;
+      color:white;
+      margin:5px;
+      border:none;
+    }
+    .title{
+        text-align: center;
+    }
+    .MyForm{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    label{
+        margin-left: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="title">ToDoList</h1>
+    <div class="MyForm">
+        <form id="taskForm">
+            <label for="taskTitle">Task Title:</label>
+            <input type="text" id="taskTitle" name="taskTitle" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+  <table id="taskTable">
+    <thead>
+      <tr>
+        <th>Serial No</th>
+        <th>Task Title</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
